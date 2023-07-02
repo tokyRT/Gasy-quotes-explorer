@@ -13,49 +13,44 @@ const selector = (state) => ({
 export default function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("")
   const [focused, setFocused] = useState(false)
-  const { history, addToHistory, matchedHistory, setGlobalQuery } = useStore(selector)
+  const { addToHistory, matchedHistory, setGlobalQuery } = useStore(selector)
   const [matched, setMatched] = useState(null)
   const [suggestionPlaceholder, setSuggestionPlaceholder] = useState("")
-  const [isOpen, setIsOpen] = useState(false)
-  const inputRef = useRef()
 
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // setSearchQuery("")
-    if(suggestionPlaceholder != ""){
+    if (suggestionPlaceholder != "") {
       setSearchQuery(suggestionPlaceholder)
       addToHistory(suggestionPlaceholder)
       setGlobalQuery(suggestionPlaceholder)
-    } else{
+    } else {
       addToHistory(searchQuery)
       setGlobalQuery(searchQuery)
     }
     setFocused(false)
   }
   useEffect(() => {
-    if(matched && matched.authorsStartWith.length > 0 && searchQuery.length>0) setSuggestionPlaceholder(matched.authorsStartWith[0])
+    if (matched && matched.authorsStartWith.length > 0 && searchQuery.length > 0) setSuggestionPlaceholder(matched.authorsStartWith[0])
     else setSuggestionPlaceholder("")
   }, [matched])
   const handleOnKeyUp = (e) => {
     setMatched(matchedHistory(searchQuery))
-    if(e.keyCode == 13){
+    if (e.keyCode == 13) {
       setFocused(false)
-    } else{
+    } else {
       setFocused(true)
     }
   }
   const handleItemClick = (author) => {
-    // inputRef.current.focus()
     console.log(author);
     setSearchQuery(author)
     setGlobalQuery(author)
     addToHistory(author)
     setFocused(false)
-    // setIsOpen(false)
   }
   const handleOnblur = () => {
-    setTimeout(()=>{
+    setTimeout(() => {
       setFocused(false)
     }, 200)
   }
@@ -67,12 +62,12 @@ export default function SearchBar() {
         <ul>
           {
             matched.authorsStartWith.map((item, i) => (
-              <li key={i} onClick={()=>handleItemClick(item)}>{item}</li>
+              <li key={i} onClick={() => handleItemClick(item)}>{item}</li>
             ))
           }
           {
             matched.similars.map((item, i) => (
-              <li key={i} onClick={()=>handleItemClick(item)}>{item}</li>
+              <li key={i} onClick={() => handleItemClick(item)}>{item}</li>
             ))
           }
         </ul>
@@ -80,14 +75,14 @@ export default function SearchBar() {
     )
   }
   const renderPlaceholder = () => {
-    if(!matched || matched.authorsStartWith.length == 0 || !focused) return 
+    if (!matched || matched.authorsStartWith.length == 0 || !focused) return
     return (
       <span className="suggestion">{suggestionPlaceholder}</span>
     )
   }
   return (
     <div className={`search-bar ${focused ? "focused" : ""}`}>
-      <form onSubmit={handleSubmit} onReset={() => {setSearchQuery(""); setSuggestionPlaceholder("")}}>
+      <form onSubmit={handleSubmit} onReset={() => { setSearchQuery(""); setSuggestionPlaceholder("") }}>
         <label className="icon" htmlFor="searchField">
           <BsSearch />
         </label>
@@ -101,9 +96,8 @@ export default function SearchBar() {
           onKeyUp={handleOnKeyUp}
           onFocus={() => setFocused(true)}
           onBlur={handleOnblur}
-          placeholder="Agrad / Andry Rajoelina ..."
+          placeholder="Agrad / Andry Nirina Rajoelina ..."
           autoComplete="off"
-          ref={inputRef}
         />
         {
           searchQuery != "" ? (<button className="clear" title="clear field" type="reset">
