@@ -50,6 +50,7 @@ const useStore = create((set, get) => {
         addToHistory: (author) => {
             //if the author is already in the history, remove it and add it again so it will be the most recent
             const trimedAuthor = author.trim()
+            if(author === "") return
             if (get().history.includes(trimedAuthor)) {
                 set({
                     history: [...get().history.filter(item => item !== trimedAuthor), trimedAuthor]
