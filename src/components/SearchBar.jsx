@@ -82,7 +82,7 @@ export default function SearchBar() {
   }
   return (
     <div className={`search-bar ${focused ? "focused" : ""}`}>
-      <form onSubmit={handleSubmit} onReset={() => { setSearchQuery(""); setSuggestionPlaceholder("") }}>
+      <form onSubmit={handleSubmit} onReset={() => { setSearchQuery(""); setSuggestionPlaceholder(""); setGlobalQuery("")}}>
         <label className="icon" htmlFor="searchField">
           <BsSearch />
         </label>
