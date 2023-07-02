@@ -1,0 +1,68 @@
+main {
+  .content {
+    .search-bar {
+      background-color: white;
+      max-width: 715px;
+      margin: auto;
+      height: 66px;
+      border-radius: $borderRadius;
+      form {
+        height: 100%;
+        padding: 8px;
+        display: flex;
+        label {
+          width: 50px;
+          color: $greyStroke;
+          font-size: 1.8em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: .8;
+        }
+        input {
+          width: 100%;
+          border: none;
+          outline: none;
+          font-weight: 500;
+          padding-left: 10px;
+          padding-right: 10px;
+          &::placeholder {
+            color: $greyStroke;
+            font-weight: 300;
+          }
+        }
+        button.clear {
+          background-color: transparent;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          color: $greyStroke;
+          font-size: 1.5em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:hover {
+            color: darken($greyStroke, 10%);
+          }
+        }
+        button.search {
+          background-color: $purple;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 700;
+          border-radius: $borderRadius;
+          width: 134px;
+          transition: all .3s;
+          &:hover {
+            background-color: darken($purple, 10%);
+          }
+        }
+      }
+    }
+  }
+}

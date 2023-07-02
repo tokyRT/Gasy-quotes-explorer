@@ -1,0 +1,27 @@
+.quotes-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 10vh;
+    // border: 1px solid $greyStroke;
+    gap: 29px 30px;
+    .quote-item {
+        max-width: 330px;
+        width: 50%;
+        border-radius: $borderRadius;
+        border: 1px solid $greyStroke;
+        background-color: $bgColor;
+        padding: 25px 30px;
+        p.quote{
+            margin: 0;
+        }
+        p.author{
+            margin: 0;
+            color: $cyan;
+            font-style: italic;
+            padding-top: 20px;
+        }
+    }
+}

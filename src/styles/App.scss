@@ -1,0 +1,41 @@
+@import "partials/_variables.scss";
+@import "partials/_base.scss";
+
+main {
+  position: relative;
+  .gradient {
+    width: 100%;
+    height: 100vw;
+    background: radial-gradient(50% 50% at 50% 50%, #053c64 0%, rgba(0, 50, 148, 0) 100%);
+    background-position-y: -50vw;
+    background-repeat: no-repeat;
+    // border: 2px solid red;
+    position: absolute;
+    top: 0;
+    // display: none;
+  }
+  .content {
+    position: relative;
+    padding-top: 7vh;
+    .title {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 7vh;
+      h1 {
+        font-size: 72px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 106%;
+        margin: 40px 0;
+      }
+      p {
+        a {
+          color: $cyan;
+        }
+      }
+    }
+  }
+}
+@import "partials/_searchBar.scss";
+@import "partials/_quotesList.scss";
