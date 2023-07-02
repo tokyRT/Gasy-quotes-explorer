@@ -4,8 +4,10 @@ A web UI for the [quotes-gasy-repository](https://github.com/rasolofonirina/quot
 ## Online Demo
 You can test the project [here](https://wcc-s1-toky.netlify.app/)
 ## Features
+- [x] autocompletion from previous query (levenshtein distance < 6)
+- [x] show the best match as a placeholder 
+- [x] auto save history to localstorage
 - [x] filter quotes
-- [x] autocompletion from previous query
 ## How to run the project
     cd <projetc_folder>
     npm install
