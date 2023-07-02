@@ -39,6 +39,11 @@ export default function SearchBar() {
   }, [matched])
   const handleOnKeyUp = (e) => {
     setMatched(matchedHistory(searchQuery))
+    if(e.keyCode == 13){
+      setFocused(false)
+    } else{
+      setFocused(true)
+    }
   }
   const handleItemClick = (author) => {
     // inputRef.current.focus()
