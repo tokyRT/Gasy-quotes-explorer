@@ -2,6 +2,7 @@
 @import "partials/_base.scss";
 
 main {
+  padding: 0 3%;
   position: relative;
   .gradient {
     width: 100%;
@@ -12,6 +13,7 @@ main {
     // border: 2px solid red;
     position: absolute;
     top: 0;
+    left: 0;
     // display: none;
   }
   .content {
@@ -32,6 +34,26 @@ main {
       p {
         a {
           color: $cyan;
+        }
+      }
+    }
+  }
+  @media (max-width: $mdBreakpoint) {
+    font-size: 14px;
+    .gradient{
+      background-size: 150% 150%;
+      background-position-x: -25vw;
+      height: 100vh;
+      background-position-y: -90vh;
+    }
+    .content {
+      padding-top: 3vh;
+      .title {
+        svg {
+          width: 80px;
+        }
+        h1 {
+          font-size: 2.5em;
         }
       }
     }

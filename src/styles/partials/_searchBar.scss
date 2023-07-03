@@ -78,6 +78,9 @@ main {
           width: 134px;
           flex-shrink: 0;
           transition: all .3s;
+          .icon{
+            display: none;
+          }
           &:hover {
             background-color: darken($purple, 10%);
           }
@@ -122,6 +125,38 @@ main {
       }
       &.focused{
         outline: 2px;
+      }
+      @media (max-width: $mdBreakpoint) {
+        height: 55px;
+        form{
+          padding: 4px;
+          label{
+            display: none;
+          }
+          span.suggestion{
+            font-size: 16px;
+            left: 14px;
+            height: calc(100% - 9px);
+          }
+          input{
+            font-size: 16px;
+          }
+          button.search{
+            width: 47px;
+            .icon{
+              display: inline;
+              font-size: 18px;
+            }
+            .text{
+              display: none;
+            }
+          }
+          .history{
+            top: 60px;
+            left: 0;
+            width: 100%;
+          }
+        }
       }
     }
   }

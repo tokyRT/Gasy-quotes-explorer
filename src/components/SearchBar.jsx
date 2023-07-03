@@ -82,7 +82,7 @@ export default function SearchBar() {
   }
   return (
     <div className={`search-bar ${focused ? "focused" : ""}`}>
-      <form onSubmit={handleSubmit} onReset={() => { setSearchQuery(""); setSuggestionPlaceholder(""); setGlobalQuery("")}}>
+      <form onSubmit={handleSubmit} onReset={() => { setSearchQuery(""); setSuggestionPlaceholder(""); setGlobalQuery("") }}>
         <label className="icon" htmlFor="searchField">
           <BsSearch />
         </label>
@@ -104,7 +104,10 @@ export default function SearchBar() {
             <BsX />
           </button>) : ""
         }
-        <button type="submit" className="search">search</button>
+        <button type="submit" className="search">
+          <BsSearch className="icon" />
+          <span className="text">search</span>
+        </button>
         {
           renderHistory()
         }

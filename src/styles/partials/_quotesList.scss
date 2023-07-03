@@ -9,7 +9,8 @@
     gap: 29px 30px;
     .quote-item {
         max-width: 330px;
-        width: 50%;
+        min-width: 250px;
+        width: 30%;
         border-radius: $borderRadius;
         border: 1px solid $greyStroke;
         background-color: $bgColor;
@@ -26,6 +27,18 @@
             color: $cyan;
             font-style: italic;
             padding-top: 20px;
+        }
+    }
+    @media (max-width: $lgbreakpoint) {
+        gap: 20px 4%;
+        .quote-item{
+            width: 48%;
+            max-width: initial;
+        }
+    }
+    @media (max-width: $smBreakpoint) {
+        .quote-item{
+            width: 100%;
         }
     }
 }
