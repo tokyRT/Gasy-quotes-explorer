@@ -2,7 +2,7 @@
 ## Gasy Quotes explorer
 A web UI for the [quotes-gasy-repository](https://github.com/rasolofonirina/quotes-gasy)
 ## Online Demo
-You can test the project [here](https://wcc-s1-toky.netlify.app/)
+You can test the project [here](https://gasy-quotes-explorer.netlify.app/)
 ## Features
 - [x] autocompletion from previous query (levenshtein distance < 6)
 - [x] show the best match as a placeholder 
